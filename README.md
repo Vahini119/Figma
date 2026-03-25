@@ -35,327 +35,769 @@ Select the specific frame while generating code using Anima plugin.
 
 ## CODE:
 ```
-import image from "./image.svg";
-import textOnAPath from "./text-on-a-path.svg";
 
-export const AndroidCompact = (): JSX.Element => {
-  return (
-    <div className="overflow-hidden bg-[url(/android-compact-1.png)] bg-cover bg-[50%_50%] w-full min-w-[410px] min-h-[922px] relative">
-      <div className="absolute top-[67px] left-9 w-[347px] h-28 bg-[#2abdbd]" />
-
-      <p className="absolute top-[89px] left-[68px] w-[303px] [font-family:'Inter-Bold',Helvetica] font-bold text-[#e41f1f] text-2xl tracking-[0] leading-[normal]">
-        SPORTS DAY EVENTS AND REGISTER
-      </p>
-
-      <button
-        className="absolute top-[343px] left-[66px] w-[305px] h-[91px] bg-[#fa167d] cursor-pointer"
-        type="button"
-        aria-label="Click here to view events"
-      >
-        <p className="absolute top-[22px] left-[58px] w-[262px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-2xl tracking-[0] leading-[normal]">
-          CLICK HERE TO VIEW EVENTS
-        </p>
-      </button>
-
-      <img
-        className="absolute top-[518px] left-[22px] w-[317px] h-[95px]"
-        alt="Sports day graphic"
-        src={image}
-      />
-
-      <img
-        className="absolute top-[833px] -left-11 w-[410px] h-[89px]"
-        alt="Text on a path"
-        src={textOnAPath}
-      />
-
-      <button
-        className="absolute top-[512px] left-[55px] w-[328px] h-[90px] bg-[#f10f7c] cursor-pointer"
-        type="button"
-        aria-label="Click here to register for events"
-      >
-        <p className="absolute top-[19px] left-[22px] w-[294px] [font-family:'Inter-BoldItalic',Helvetica] font-bold italic text-black text-2xl tracking-[0] leading-[normal]">
-          CLICK HERE TO REGISTER FOR EVENTS
-        </p>
-      </button>
-
-      <div className="absolute top-[853px] left-0 w-[410px] h-[69px] bg-black" />
-
-      <div className="absolute top-[877px] left-[27px] w-[356px] [font-family:'Inter-Bold',Helvetica] font-bold text-[#f3e8e8] text-4xl tracking-[0] leading-[normal]">
-        VAHINI-25018547
-      </div>
+index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="android-compact">
+      <div class="rectangle"></div>
+      <p class="text-wrapper">SPORTS DAY EVENTS AND REGISTER</p>
+      <div class="div"></div>
+      <img class="text-on-a-path" src="img/image.svg" />
+      <img class="img" src="img/text-on-a-path.svg" />
+      <p class="p">CLICK HERE TO VIEW EVENTS</p>
+      <div class="rectangle-2"></div>
+      <p class="text-wrapper-2">CLICK HERE TO REGISTER FOR EVENTS</p>
+      <div class="rectangle-3"></div>
+      <div class="text-wrapper-3">VAHINI-25018547</div>
     </div>
-  );
-};
+  </body>
+</html>
+
+global.css
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: local("Inter-Bold");
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-BoldItalic", "weight": "700", "style": "italic", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-BoldItalic";
+  src: local("Inter-BoldItalic");
+}
+style.css
+.android-compact {
+  overflow: hidden;
+  background-image: url(./img/android-compact-1.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  min-width: 410px;
+  min-height: 922px;
+  position: relative;
+}
+
+.android-compact .rectangle {
+  position: absolute;
+  top: 67px;
+  left: 36px;
+  width: 347px;
+  height: 112px;
+  background-color: #2abdbd;
+}
+
+.android-compact .text-wrapper {
+  position: absolute;
+  top: 89px;
+  left: 68px;
+  width: 303px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #e41f1f;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .div {
+  position: absolute;
+  top: 343px;
+  left: 66px;
+  width: 305px;
+  height: 91px;
+  background-color: #fa167d;
+}
+
+.android-compact .text-on-a-path {
+  position: absolute;
+  top: 534px;
+  left: 233px;
+  width: 317px;
+  height: 95px;
+}
+
+.android-compact .img {
+  position: absolute;
+  top: 849px;
+  left: 167px;
+  width: 410px;
+  height: 89px;
+}
+
+.android-compact .p {
+  position: absolute;
+  top: 365px;
+  left: 96px;
+  width: 262px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .rectangle-2 {
+  position: absolute;
+  top: 512px;
+  left: 55px;
+  width: 328px;
+  height: 90px;
+  background-color: #f10f7c;
+}
+
+.android-compact .text-wrapper-2 {
+  position: absolute;
+  top: 531px;
+  left: 77px;
+  width: 294px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .rectangle-3 {
+  position: absolute;
+  top: 853px;
+  left: 0;
+  width: 410px;
+  height: 69px;
+  background-color: #000000;
+}
+
+.android-compact .text-wrapper-3 {
+  position: absolute;
+  top: 877px;
+  left: 27px;
+  width: 356px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #f3e8e8;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
 
 ```
 ```
-import { useState } from "react";
-import sports21 from "./sports-2-1.png";
-
-export const AndroidCompact = (): JSX.Element => {
-  const [formData, setFormData] = useState({
-    name: "",
-    regNo: "",
-    mobileNo: "",
-    emailId: "",
-    events: "",
-    noOfMembers: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const formFields = [
-    {
-      id: "name",
-      label: "NAME:",
-      name: "name",
-      type: "text",
-      top: "top-[154px]",
-      left: "left-7",
-      width: "w-[335px]",
-      height: "h-[73px]",
-      bg: "bg-[#e29de2]",
-      labelTop: "top-[173px]",
-      labelLeft: "left-[50px]",
-      labelWidth: "w-[280px]",
-      inputTop: "top-[173px]",
-      inputLeft: "left-[160px]",
-      inputWidth: "w-[180px]",
-    },
-    {
-      id: "regNo",
-      label: "REG NO:",
-      name: "regNo",
-      type: "text",
-      top: "top-[277px]",
-      left: "left-[34px]",
-      width: "w-[329px]",
-      height: "h-16",
-      bg: "bg-[#c68dd6]",
-      labelTop: "top-[296px]",
-      labelLeft: "left-[54px]",
-      labelWidth: "w-[309px]",
-      inputTop: "top-[296px]",
-      inputLeft: "left-[180px]",
-      inputWidth: "w-[160px]",
-    },
-    {
-      id: "mobileNo",
-      label: "MOBILE NO:",
-      name: "mobileNo",
-      type: "tel",
-      top: "top-[393px]",
-      left: "left-[34px]",
-      width: "w-[329px]",
-      height: "h-[74px]",
-      bg: "bg-[#f48df4]",
-      labelTop: "top-[417px]",
-      labelLeft: "left-[58px]",
-      labelWidth: "w-[272px]",
-      inputTop: "top-[417px]",
-      inputLeft: "left-[210px]",
-      inputWidth: "w-[130px]",
-    },
-    {
-      id: "emailId",
-      label: "EMAIL ID:",
-      name: "emailId",
-      type: "email",
-      top: "top-[518px]",
-      left: "left-7",
-      width: "w-[335px]",
-      height: "h-[63px]",
-      bg: "bg-[#b982bd]",
-      labelTop: "top-[532px]",
-      labelLeft: "left-[50px]",
-      labelWidth: "w-[263px]",
-      inputTop: "top-[532px]",
-      inputLeft: "left-[190px]",
-      inputWidth: "w-[155px]",
-    },
-    {
-      id: "events",
-      label: "EVENTS:",
-      name: "events",
-      type: "text",
-      top: "top-[628px]",
-      left: "left-[34px]",
-      width: "w-[329px]",
-      height: "h-[65px]",
-      bg: "bg-[#dd94da]",
-      labelTop: "top-[648px]",
-      labelLeft: "left-[34px]",
-      labelWidth: "w-[255px]",
-      inputTop: "top-[648px]",
-      inputLeft: "left-[170px]",
-      inputWidth: "w-[170px]",
-    },
-    {
-      id: "noOfMembers",
-      label: "NO.OF.MEMBERS:",
-      name: "noOfMembers",
-      type: "number",
-      top: "top-[741px]",
-      left: "left-[34px]",
-      width: "w-[329px]",
-      height: "h-[63px]",
-      bg: "bg-[#cf97df]",
-      labelTop: "top-[762px]",
-      labelLeft: "left-[34px]",
-      labelWidth: "w-[272px]",
-      inputTop: "top-[762px]",
-      inputLeft: "left-[240px]",
-      inputWidth: "w-[110px]",
-    },
-  ];
-
-  return (
-    <div className="bg-white overflow-hidden w-full min-w-[396px] min-h-[922px] relative">
-      <img
-        className="absolute top-0 left-0 w-[396px] h-[922px] aspect-[1.5] object-cover"
-        alt="Sports"
-        src={sports21}
-      />
-
-      <div className="absolute top-[859px] left-px w-[396px] h-[63px] bg-black" />
-
-      <div className="absolute top-[885px] left-[34px] w-[348px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-4xl tracking-[0] leading-[normal]">
-        VAHINI-25018547
-      </div>
-
-      <div className="absolute top-0 left-px w-[396px] h-[91px] bg-[#9dc6d6]" />
-
-      <div className="absolute top-[26px] left-[21px] w-[361px] [font-family:'Inter-BoldItalic',Helvetica] font-bold italic text-[#0804f5] text-[32px] tracking-[0] leading-[normal]">
-        REGISTRATION FORM
-      </div>
-
-      {formFields.map((field) => (
-        <div key={field.id}>
-          <div
-            className={`absolute ${field.top} ${field.left} ${field.width} ${field.height} ${field.bg}`}
-          />
-          <label
-            htmlFor={field.id}
-            className={`absolute ${field.labelTop} ${field.labelLeft} ${field.labelWidth} [font-family:'Inter-BoldItalic',Helvetica] font-bold italic text-black text-2xl tracking-[0] leading-[normal]`}
-          >
-            {field.label}
-          </label>
-          <input
-            id={field.id}
-            name={field.name}
-            type={field.type}
-            value={formData[field.name as keyof typeof formData]}
-            onChange={handleChange}
-            className={`absolute ${field.inputTop} ${field.inputLeft} ${field.inputWidth} h-[32px] bg-transparent border-b border-black [font-family:'Inter-BoldItalic',Helvetica] font-bold italic text-black text-xl tracking-[0] leading-[normal] focus:outline-none`}
-            aria-label={field.label}
-          />
-        </div>
-      ))}
+index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="android-compact">
+      <img class="sports" src="img/sports-2-1.png" />
+      <div class="rectangle"></div>
+      <div class="text-wrapper">VAHINI-25018547</div>
+      <div class="div"></div>
+      <div class="text-wrapper-2">REGISTRATION FORM</div>
+      <div class="rectangle-2"></div>
+      <div class="rectangle-3"></div>
+      <div class="rectangle-4"></div>
+      <div class="rectangle-5"></div>
+      <div class="rectangle-6"></div>
+      <div class="rectangle-7"></div>
+      <div class="text-wrapper-3">REG NO:</div>
+      <div class="text-wrapper-4">NAME:</div>
+      <div class="text-wrapper-5">MOBILE NO:</div>
+      <div class="text-wrapper-6">EMAIL ID:</div>
+      <div class="text-wrapper-7">EVENTS:</div>
+      <div class="text-wrapper-8">NO.OF.MEMBERS:</div>
     </div>
-  );
-};
+  </body>
+</html>
+
+global.css
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: local("Inter-Bold");
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-BoldItalic", "weight": "700", "style": "italic", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-BoldItalic";
+  src: local("Inter-BoldItalic");
+}
+style.css
+.android-compact {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  min-width: 396px;
+  min-height: 922px;
+  position: relative;
+}
+
+.android-compact .sports {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 396px;
+  height: 922px;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+
+.android-compact .rectangle {
+  position: absolute;
+  top: 859px;
+  left: 1px;
+  width: 396px;
+  height: 63px;
+  background-color: #000000;
+}
+
+.android-compact .text-wrapper {
+  position: absolute;
+  top: 885px;
+  left: 34px;
+  width: 348px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .div {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 396px;
+  height: 91px;
+  background-color: #9dc6d6;
+}
+
+.android-compact .text-wrapper-2 {
+  position: absolute;
+  top: 26px;
+  left: 21px;
+  width: 361px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #0804f5;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .rectangle-2 {
+  position: absolute;
+  top: 154px;
+  left: 28px;
+  width: 335px;
+  height: 73px;
+  background-color: #e29de2;
+}
+
+.android-compact .rectangle-3 {
+  position: absolute;
+  top: 277px;
+  left: 34px;
+  width: 329px;
+  height: 64px;
+  background-color: #c68dd6;
+}
+
+.android-compact .rectangle-4 {
+  position: absolute;
+  top: 393px;
+  left: 34px;
+  width: 329px;
+  height: 74px;
+  background-color: #f48df4;
+}
+
+.android-compact .rectangle-5 {
+  position: absolute;
+  top: 518px;
+  left: 28px;
+  width: 335px;
+  height: 63px;
+  background-color: #b982bd;
+}
+
+.android-compact .rectangle-6 {
+  position: absolute;
+  top: 628px;
+  left: 34px;
+  width: 329px;
+  height: 65px;
+  background-color: #dd94da;
+}
+
+.android-compact .rectangle-7 {
+  position: absolute;
+  top: 741px;
+  left: 34px;
+  width: 329px;
+  height: 63px;
+  background-color: #cf97df;
+}
+
+.android-compact .text-wrapper-3 {
+  position: absolute;
+  top: 296px;
+  left: 54px;
+  width: 309px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-4 {
+  position: absolute;
+  top: 173px;
+  left: 50px;
+  width: 280px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-5 {
+  position: absolute;
+  top: 417px;
+  left: 58px;
+  width: 272px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-6 {
+  position: absolute;
+  top: 532px;
+  left: 50px;
+  width: 263px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-7 {
+  position: absolute;
+  top: 648px;
+  left: 34px;
+  width: 255px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-8 {
+  position: absolute;
+  top: 762px;
+  left: 34px;
+  width: 272px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
 
 ```
 ```
-
-
-import prize1 from "./prize-1.png";
-import rectangle18 from "./rectangle-18.svg";
-
-export const AndroidCompact = (): JSX.Element => {
-  const prizes = [
-    {
-      label: "1st-5000/-",
-      bg: "bg-[#b5b281]",
-      top: "top-[284px]",
-      textTop: "top-[304px]",
-      textLeft: "left-[95px]",
-      height: "h-[81px]",
-    },
-    {
-      label: "2nd-4000/-",
-      bg: "bg-[#d0d19b]",
-      top: "top-[398px]",
-      textTop: "top-[420px]",
-      textLeft: "left-24",
-      height: "h-[74px]",
-    },
-  ];
-
-  return (
-    <div className="bg-white w-full min-w-[412px] min-h-[917px] relative">
-      <img
-        className="absolute top-0 left-0 w-[412px] h-[917px] aspect-[1.5] object-cover"
-        alt="Prize"
-        src={prize1}
-      />
-
-      <div className="absolute top-0 left-0 w-[412px] h-[90px] bg-[#474642]" />
-
-      <div className="absolute top-[22px] left-11 w-[368px] [font-family:'Inter-BoldItalic',Helvetica] font-bold italic text-white text-[32px] tracking-[0] leading-[normal]">
-        CASH PRIZE DETAILS
-      </div>
-
-      <div className="absolute top-[844px] left-0 w-[412px] h-[73px] bg-black" />
-
-      <div className="absolute top-[867px] left-14 w-[356px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
-        VAHINI-25018547
-      </div>
-
-      <p className="absolute top-[104px] left-[27px] w-[330px] [font-family:'Inter-Bold',Helvetica] font-bold text-[#e2fa04] text-[32px] tracking-[0] leading-[normal]">
-        For any sports their is a cash prize for winners
-      </p>
-
-      <div className="absolute top-[284px] left-[43px] w-[300px] h-[81px] bg-[#b5b281]" />
-      <div className="absolute top-[304px] left-[95px] w-[252px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-[normal]">
-        1st-5000/-
-      </div>
-
-      <div className="absolute top-[398px] left-[43px] w-[300px] h-[74px] bg-[#d0d19b]" />
-      <div className="absolute top-[420px] left-24 w-[250px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-[normal]">
-        2nd-4000/-
-      </div>
-
-      <img
-        className="absolute top-[504px] left-[43px] w-[300px] h-[66px]"
-        alt="Rectangle"
-        src={rectangle18}
-      />
-      <div className="absolute top-[515px] left-[99px] w-[244px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[32px] tracking-[0] leading-[normal]">
-        3rd-3000/-
-      </div>
+index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="android-compact">
+      <img class="prize" src="img/prize-1.png" />
+      <div class="rectangle"></div>
+      <div class="text-wrapper">CASH PRIZE DETAILS</div>
+      <div class="div"></div>
+      <div class="text-wrapper-2">VAHINI-25018547</div>
+      <p class="p">For any sports their is a cash prize for winners</p>
+      <div class="rectangle-2"></div>
+      <div class="rectangle-3"></div>
+      <img class="img" src="img/rectangle-18.svg" />
+      <div class="text-wrapper-3">3rd-3000/-</div>
+      <div class="text-wrapper-4">2nd-4000/-</div>
+      <div class="text-wrapper-5">1st-5000/-</div>
     </div>
-  );
-};
+  </body>
+</html>
+
+global.css
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-BoldItalic", "weight": "700", "style": "italic", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-BoldItalic";
+  src: local("Inter-BoldItalic");
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: local("Inter-Bold");
+}
+
+style.css
+
+
+.android-compact {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 412px;
+  min-height: 917px;
+  position: relative;
+}
+
+.android-compact .prize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 412px;
+  height: 917px;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+
+.android-compact .rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 412px;
+  height: 90px;
+  background-color: #474642;
+}
+
+.android-compact .text-wrapper {
+  position: absolute;
+  top: 22px;
+  left: 44px;
+  width: 368px;
+  font-family: "Inter-BoldItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .div {
+  position: absolute;
+  top: 844px;
+  left: 0;
+  width: 412px;
+  height: 73px;
+  background-color: #000000;
+}
+
+.android-compact .text-wrapper-2 {
+  position: absolute;
+  top: 867px;
+  left: 56px;
+  width: 356px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .p {
+  position: absolute;
+  top: 104px;
+  left: 27px;
+  width: 330px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #e2fa04;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .rectangle-2 {
+  position: absolute;
+  top: 284px;
+  left: 43px;
+  width: 300px;
+  height: 81px;
+  background-color: #b5b281;
+}
+
+.android-compact .rectangle-3 {
+  position: absolute;
+  top: 398px;
+  left: 43px;
+  width: 300px;
+  height: 74px;
+  background-color: #d0d19b;
+}
+
+.android-compact .img {
+  position: absolute;
+  top: 504px;
+  left: 43px;
+  width: 300px;
+  height: 66px;
+}
+
+.android-compact .text-wrapper-3 {
+  position: absolute;
+  top: 515px;
+  left: 99px;
+  width: 244px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-4 {
+  position: absolute;
+  top: 420px;
+  left: 96px;
+  width: 250px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .text-wrapper-5 {
+  position: absolute;
+  top: 304px;
+  left: 95px;
+  width: 252px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
 
 ```
 ```
-export const AndroidCompact = (): JSX.Element => {
-  return (
-    <div className="bg-[#e3acd5] w-full min-w-[412px] min-h-[917px] relative">
-      <div className="absolute top-[824px] left-0 w-[412px] h-[93px] bg-black" />
-
-      <div className="absolute top-[850px] left-[29px] w-[353px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
-        VAHINI-25018547
-      </div>
-
-      <div className="absolute top-[77px] left-[34px] w-[348px] [font-family:'Inter-Bold',Helvetica] font-bold text-[#510941] text-[40px] tracking-[0] leading-[normal]">
-        !...THANKYOU...!
-      </div>
-
-      <p className="absolute top-[333px] left-14 w-[340px] [font-family:'Inter-ExtraBold_Italic',Helvetica] font-extrabold italic text-[#1924bb] text-[32px] tracking-[0] leading-[normal]">
-        COME AND PARTICIPATE AND WIN THE PRIZE...!
-      </p>
+index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="android-compact">
+      <div class="rectangle"></div>
+      <div class="text-wrapper">VAHINI-25018547</div>
+      <div class="div">!...THANKYOU...!</div>
+      <p class="p">COME AND PARTICIPATE AND WIN THE PRIZE...!</p>
     </div>
-  );
-};
+  </body>
+</html>
 
+global.css
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: local("Inter-Bold");
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-ExtraBold Italic", "weight": "800", "style": "italic", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-ExtraBold Italic";
+  src: local("Inter-ExtraBold Italic");
+}
+
+style.css
+
+.android-compact {
+  background-color: #e3acd5;
+  width: 100%;
+  min-width: 412px;
+  min-height: 917px;
+  position: relative;
+}
+
+.android-compact .rectangle {
+  position: absolute;
+  top: 824px;
+  left: 0;
+  width: 412px;
+  height: 93px;
+  background-color: #000000;
+}
+
+.android-compact .text-wrapper {
+  position: absolute;
+  top: 850px;
+  left: 29px;
+  width: 353px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .div {
+  position: absolute;
+  top: 77px;
+  left: 34px;
+  width: 348px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #510941;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.android-compact .p {
+  position: absolute;
+  top: 333px;
+  left: 56px;
+  width: 340px;
+  font-family: "Inter-ExtraBold Italic", Helvetica;
+  font-weight: 800;
+  font-style: italic;
+  color: #1924bb;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
 
 ```
+
 
 ## OUTPUT:
 
